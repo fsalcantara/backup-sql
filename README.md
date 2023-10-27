@@ -33,8 +33,8 @@ import classeBackup
 servidor = 'SeuServidor'
 banco_de_dados = 'SeuBancoDeDados'
 autenticacao_windows = True # Ou False se estiver usando autenticação SQL
-usuario = 'SeuUsuario'  # Deixe em branco se estiver usando autenticação do Windows
-senha = 'SuaSenha'  # Deixe em branco se estiver usando autenticação do Windows
+usuario = '' if autenticacao_windows else 'seu_usuario' # Usuario Autenticação do SQL Server
+senha = '' if autenticacao_windows else 'sua_senha' # Senha Autenticação do SQL Server
 
 backup = classeBackup.BackupSQLServer(servidor, banco_de_dados, autenticacao_windows, usuario, senha)
 backup.iniciar_backup_e_monitoramento()
